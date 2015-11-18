@@ -6,12 +6,26 @@
 </head>
   <body>
   <!-- expressions insert dynamic values into html -->
-    <div ng-repeat="product in store.products" ng-hide="store.product.soldOut">
-
-      <h3> {{store.product.name}}, <em class="pull-right">${{store.product.price}}</em></h3>
+  <div class="list-group" ng-controller="StoreController as store">
+      <div class="list-group-item" ng-repeat="product in store.products">
+      <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
+      <!-- | (send data into) currency specified correct number of decimiles for price -->
 
       <button type="button" ng-show="store.product.canPurchase">Add To Cart</button>
+
+      <!-- Image Gallery  -->
+      <div class="gallery">
+        <div class="img-wrap">
+          <img ng-src="{{product.images[0]}}">
+        </div>
+        <ul class="img-thumbnails clearfix">
+          <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+            <img ng-src="{{image}}">
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
     <!-- angular js -->
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <!-- custom js -->
