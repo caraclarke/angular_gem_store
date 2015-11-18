@@ -17,6 +17,14 @@
     };
   });
 
+   app.controller('GalleryController', function(){
+    this.current = 0;
+
+    this.setCurrent = function(setCurrent) {
+      this.current = setCurrent || 0;
+    }
+  });
+
   var gems = [{
     name: 'Azurite',
     description: "Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems.",
