@@ -5,9 +5,58 @@
     this.products = gems;
   });
 
-  var gems = [
-    { name: 'Azurite', price: 2.95, canPurchase: true, soldOut: false },
-    { name: 'Bloodstone', price: 5.95, canPurchase: false, soldOut: true },
-    { name: 'Zircon', price: 3.95, canPurchase: true, soldOut: false }
-  ];
+  app.controller('TabController', function(){
+    this.tab = 1;
+
+    this.setTab = function(setTab) {
+      this.tab = setTab;
+    };
+
+    this.isSet = function(givenTag) {
+      return this.tab === givenTag;
+    };
+  });
+
+  var gems = [{
+    name: 'Azurite',
+    description: "Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems.",
+    shine: 8,
+    canPurchase: true,
+    soldOut: false,
+    price: 110.50,
+    rarity: 7,
+    color: '#CCC',
+    faces: 14,
+    images: [ ]
+  }, {
+    name: 'Bloodstone',
+    description: "Origin of the Bloodstone is unknown, hence its low value. It has a very high shine and 12 sides, however.",
+    shine: 9,
+    canPurchase: true,
+    soldOut: false,
+    price: 22.90,
+    rarity: 6,
+    color: '#EEE',
+    faces: 12,
+    images: [
+      "images/gem-01.gif",
+      "images/gem-03.gif",
+      "images/gem-04.gif"
+    ]
+  }, {
+    name: 'Zircon',
+    description: "Zircon is our most coveted and sought after gem. You will pay much to be the proud owner of this gorgeous and high shine gem.",
+    shine: 70,
+    canPurchase: true,
+    soldOut: false,
+    price: 1100,
+    rarity: 2,
+    color: '#000',
+    faces: 6,
+    images: [
+      "images/gem-06.gif",
+      "images/gem-07.gif",
+      "images/gem-09.gif"
+    ]
+  }];
 })();

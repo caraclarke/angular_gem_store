@@ -11,10 +11,10 @@
       <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
       <!-- | (send data into) currency specified correct number of decimiles for price -->
 
-      <button type="button" ng-show="store.product.canPurchase">Add To Cart</button>
+      <button type="button" ng-show="product.canPurchase">Add To Cart</button>
 
       <!-- Image Gallery  -->
-      <div class="gallery">
+      <div class="gallery" ng-show="product.images.length">
         <div class="img-wrap">
           <img ng-src="{{product.images[0]}}">
         </div>
